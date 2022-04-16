@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development ./scripts/run-dev.sh"
+    "development": "cross-env NODE_ENV=development ./scripts/run-dev.sh",
+    "start": "npm run production",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production ./scripts/run-prod.sh",
+    "lint": "eslint --ext .js --ignore-pattern server/public --fix server"
   },
   "dependencies": {
     "core-js": "^3.8.3",
