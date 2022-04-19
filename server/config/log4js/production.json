@@ -1,0 +1,19 @@
+{
+  "appenders": {
+    "allFile": {
+      "type": "dateFile",
+      "filename": "server/log/access.log",
+      "pattern": "yyy-MM-dd",
+      "keepFileExt": true,
+      "daysToKeep": 31
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": [
+        "allFile"
+      ],
+      "level": "info"
+    }
+  }
+}

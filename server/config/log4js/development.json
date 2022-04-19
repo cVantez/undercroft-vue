@@ -1,0 +1,15 @@
+{
+  "appenders": {
+    "allConsole": {
+      "type": "console"
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": [
+        "allConsole"
+      ],
+      "level": "debug"
+    }
+  }
+}
