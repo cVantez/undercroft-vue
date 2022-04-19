@@ -7,6 +7,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "#/config/*": [
+        "server/config/*"
       ]
     },
     "lib": [
@@ -15,5 +18,12 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+  "include": [
+    "./client/src/**/*",
+    "./server/**/*"
+  ],
+  "exclude": [
+    "./server/public"
+  ]
 }

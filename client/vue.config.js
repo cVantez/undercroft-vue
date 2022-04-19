@@ -16,6 +16,9 @@ module.exports = defineConfig({
       }
     }
   },
+  chainWebpack: (config) => {
+    config.resolve.alias.set('#router', path.resolve(__dirname, 'src/router'));
+  },
   css: {
     loaderOptions: {
       sass: {
