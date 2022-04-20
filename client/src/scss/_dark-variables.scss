@@ -1,0 +1,20 @@
+// Bootstrap-dark's regular dark-variables partial has dependency on the base bootstrap variables partial,
+// so the below colors never get set in the $colors map, which means the generated utility classes are wrong.
+// Include this file before bootstrap's _variables to properly add these colors.
+@use "sass:math";
+
+$color-darker-percent-full: 20%;
+$color-darker-percent-half: math.div($color-darker-percent-full, 2);
+$color-darker-percent-quarter: math.div($color-darker-percent-half, 2);
+$color-darker-percent-none: 0;
+
+$blue: lighten(#007bff, $color-darker-percent-half);
+$indigo: darken(#6610f2, $color-darker-percent-none);
+$purple: darken(#6f42c1, $color-darker-percent-none);
+$pink: darken(#e83e8c, $color-darker-percent-none);
+$red: darken(#dc3545, $color-darker-percent-none);
+$orange: darken(#fd7e14, $color-darker-percent-none);
+$yellow: lighten(#ffc107, $color-darker-percent-half);
+$green: darken(#28a745, $color-darker-percent-none);
+$teal: darken(#20c997, $color-darker-percent-none);
+$cyan: lighten(#17a2b8, $color-darker-percent-none);

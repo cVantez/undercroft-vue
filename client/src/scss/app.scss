@@ -1,0 +1,81 @@
+@import "~@forevolve/bootstrap-dark/scss/toggle-bootstrap.scss";
+@import "~bootstrap-vue/src/index.scss";
+
+// TODO: submit as PR to @forevolve/bootstrap-dark
+// We need to include this because the toggle-boostrap* scss files import the bootstrap modules
+// as rules to apply to children of .bootstrap*. HOWEVER, the .modal-open class is ALSO applied to the body
+// (where the bootstrap*classes are applied), so those styles normally will not take effect.
+.modal-open {
+  overflow: hidden;
+
+  .modal {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+}
+
+.text-small {
+  font-size: $font-size-base * 0.75;
+}
+
+.text-smaller {
+  font-size: $font-size-base * 0.875;
+}
+
+.text-larger {
+  font-size: $font-size-base * 1.2;
+}
+
+.text-large {
+  font-size: $font-size-base * 1.5;
+}
+
+.btn-xs {
+  padding: 0.15rem 0.25rem !important;
+  border-radius: 0.18rem !important;
+  font-size: 0.75rem !important;
+  line-height: 0.75 !important;
+}
+
+.card {
+  box-shadow: 2px 2px 2px rgb(0 0 0 / 15%);
+
+  &.no-shadow {
+    box-shadow: none;
+  }
+}
+
+.tooltip.b-tooltip {
+  opacity: 1;
+}
+
+$colors: map-merge(
+  (
+    "white": $white,
+    "black": $black,
+  ),
+  $colors
+);
+
+// Create utility classes for $colors
+.bootstrap {
+  @each $color, $value in $colors {
+    @include text-emphasis-variant(".text-#{$color}", $value, true);
+    @include bg-variant(".bg-#{color}", $value, true);
+    .border-#{$color} {
+      border-color: $value !important;
+    }
+    .btn-#{$color} {
+      @include button-variant($value, $value);
+    }
+    .btn-outline-#{$color} {
+      @include button-outline-variant($value);
+    }
+  }
+
+  @if $enable-gradients {
+    @each $color, $value in $colors {
+      @include bg-gradient-variant(".bg-gradient-#{$color}", $value, true);
+    }
+  }
+}

@@ -6,7 +6,10 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": [
-        "src/*"
+        "client/src/*"
+      ],
+      "#scss/*": [
+        "client/src/scss/*"
       ],
       "#/config/*": [
         "server/config/*"

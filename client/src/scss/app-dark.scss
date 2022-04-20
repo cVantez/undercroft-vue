@@ -1,0 +1,105 @@
+// TODO: submit as PR to @forevolve/bootstrap-dark
+// Mostly copied from @forevolve/bootstrap-dark/scss/toggle-bootstrap-dark.scss
+// but fixed so the dark-variables $colors actually take precedence over the bootstrap ones
+@import "~bootstrap/scss/functions";
+@import "./dark-variables";
+@import "~bootstrap/scss/variables";
+
+@import "~bootstrap/scss/mixins";
+@import "mixins-overrides";
+@import "dark-mixins";
+
+html {
+  font-family: sans-serif; // 2
+  line-height: 1.15; // 3
+  -webkit-text-size-adjust: 100%; // 4
+  -webkit-tap-highlight-color: rgba($black, 0); // 5
+}
+
+body.bootstrap-dark {
+  margin: 0; // 1
+  font-family: $font-family-base;
+  @include font-size($font-size-base);
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  color: $body-color;
+  text-align: left; // 3
+  background-color: $body-bg; // 2
+}
+
+.bootstrap-dark {
+  @import "~bootstrap/scss/root";
+  @import "~bootstrap/scss/reboot";
+  @import "~bootstrap/scss/type";
+  @import "~bootstrap/scss/images";
+  @import "~bootstrap/scss/code";
+  @import "~bootstrap/scss/grid";
+
+  @import "~bootstrap/scss/tables";
+  @import "~@foreolve/bootstrap-dark/scss/dark-tables";
+
+  @import "~bootstrap/scss/forms";
+  @import "~@foreolve/bootstrap-dark/scss/form-overrides";
+
+  @import "~bootstrap/scss/buttons";
+  @import "~bootstrap/scss/transitions";
+  @import "~bootstrap/scss/dropdown";
+  @import "~bootstrap/scss/button-group";
+
+  @import "~bootstrap/scss/input-group";
+  @import "~@foreolve/bootstrap-dark/scss/dark-input-group";
+
+  @import "~bootstrap/scss/custom-forms";
+  @import "~bootstrap/scss/nav";
+  @import "~bootstrap/scss/navbar";
+  @import "~bootstrap/scss/card";
+  @import "~bootstrap/scss/breadcrumb";
+  @import "~bootstrap/scss/pagination";
+  @import "~bootstrap/scss/badge";
+  @import "~bootstrap/scss/jumbotron";
+  @import "~bootstrap/scss/alert";
+  @import "~bootstrap/scss/progress";
+  @import "~bootstrap/scss/media";
+  @import "~bootstrap/scss/list-group";
+  @import "~bootstrap/scss/close";
+  @import "~bootstrap/scss/toasts";
+  @import "~bootstrap/scss/modal";
+  @import "~bootstrap/scss/tooltip";
+  @import "~bootstrap/scss/popover";
+  @import "~bootstrap/scss/carousel";
+  @import "~bootstrap/scss/spinners";
+  @import "~bootstrap/scss/utilities";
+
+  @import "~@foreolve/bootstrap-dark/scss/themed-utilities-dark";
+
+  @import "~@foreolve/bootstrap-dark/scss/dark-styles";
+
+  // Create utility classes for $colors
+  $colors: map-merge(
+    (
+      "white": $white,
+      "black": $black,
+    ),
+    $colors
+  );
+
+  @each $color, $value in $colors {
+    @include text-emphasis-variant(".text-#{$color}", $value, true);
+    @include bg-variant(".bg-#{color}", $value, true);
+    .border-#{$color} {
+      border-color: $value !important;
+    }
+    .btn-#{$color} {
+      @include button-variant($value, $value);
+    }
+    .btn-outline-#{$color} {
+      @include button-outline-variant($value);
+    }
+  }
+
+  @if $enable-gradients {
+    @each $color, $value in $colors {
+      @include bg-gradient-variant(".bg-gradient-#{$color}", $value, true);
+    }
+  }
+}

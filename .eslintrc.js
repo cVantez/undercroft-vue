@@ -12,7 +12,8 @@ module.exports = {
       alias: {
         map: [
           ['@', './client/src'],
-          ['#/config', './server/config']
+          ['#scss', './client/src/scss'],
+          ['#config', './server/config']
         ]
       }
     }
@@ -21,6 +22,17 @@ module.exports = {
   parserOptions: {
     parser: '@babel/eslint-parser'
   },
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ],
   rules: {
     'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
     'comma-dangle': ['error', 'only-multiline'],
