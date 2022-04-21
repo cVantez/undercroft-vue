@@ -38,10 +38,10 @@ body.bootstrap-dark {
   @import "~bootstrap/scss/grid";
 
   @import "~bootstrap/scss/tables";
-  @import "~@foreolve/bootstrap-dark/scss/dark-tables";
+  @import "~@forevolve/bootstrap-dark/scss/dark-tables";
 
   @import "~bootstrap/scss/forms";
-  @import "~@foreolve/bootstrap-dark/scss/form-overrides";
+  @import "~@forevolve/bootstrap-dark/scss/form-overrides";
 
   @import "~bootstrap/scss/buttons";
   @import "~bootstrap/scss/transitions";
@@ -49,7 +49,7 @@ body.bootstrap-dark {
   @import "~bootstrap/scss/button-group";
 
   @import "~bootstrap/scss/input-group";
-  @import "~@foreolve/bootstrap-dark/scss/dark-input-group";
+  @import "~@forevolve/bootstrap-dark/scss/dark-input-group";
 
   @import "~bootstrap/scss/custom-forms";
   @import "~bootstrap/scss/nav";
@@ -72,9 +72,9 @@ body.bootstrap-dark {
   @import "~bootstrap/scss/spinners";
   @import "~bootstrap/scss/utilities";
 
-  @import "~@foreolve/bootstrap-dark/scss/themed-utilities-dark";
+  @import "~@forevolve/bootstrap-dark/scss/themed-utilities-dark";
 
-  @import "~@foreolve/bootstrap-dark/scss/dark-styles";
+  @import "~@forevolve/bootstrap-dark/scss/dark-styles";
 
   // dark mode tables
   .table.b-table > thead > tr {
@@ -86,7 +86,7 @@ body.bootstrap-dark {
       background-image: escape-svg($b-table-sort-icon-bg-dark-ascending);
     }
     > [aria-sort="descending"] {
-      background-image: escape-svg($b-table-sort-icon-bg-dark-not-descending);
+      background-image: escape-svg($b-table-sort-icon-bg-dark-descending);
     }
 
     // color sticky headers properly

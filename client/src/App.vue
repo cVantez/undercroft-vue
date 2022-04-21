@@ -3,19 +3,21 @@
     <a href="#main-content" class="skiplink bg-dark p-2">
       <span class="text-orange font-weight-bold">Skip to content</span>
     </a>
-    <nav>
-      <router-link to="/">
-        Home
-      </router-link> |
-      <router-link to="/about">
-        About
-      </router-link>
-    </nav>
+    <app-nav />
     <div id="main-content">
       <router-view />
     </div>
   </div>
 </template>
+
+<script>
+import AppNav from '@/components/AppNav.vue';
+
+export default {
+  name: 'UndercroftApp',
+  components: { AppNav }
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -24,19 +26,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 
 .skiplink {
