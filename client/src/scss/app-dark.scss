@@ -1,13 +1,15 @@
 // TODO: submit as PR to @forevolve/bootstrap-dark
 // Mostly copied from @forevolve/bootstrap-dark/scss/toggle-bootstrap-dark.scss
 // but fixed so the dark-variables $colors actually take precedence over the bootstrap ones
-@import "~bootstrap/scss/functions";
 @import "./dark-variables";
+@import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+@import "~bootstrap-vue/src/variables";
+@import "~@forevolve/bootstrap-dark/scss/dark-variables";
 
 @import "~bootstrap/scss/mixins";
-@import "mixins-overrides";
-@import "dark-mixins";
+@import "~@forevolve/bootstrap-dark/scss/mixins-overrides";
+@import "~@forevolve/bootstrap-dark/scss/dark-mixins";
 
 html {
   font-family: sans-serif; // 2
@@ -73,6 +75,43 @@ body.bootstrap-dark {
   @import "~@foreolve/bootstrap-dark/scss/themed-utilities-dark";
 
   @import "~@foreolve/bootstrap-dark/scss/dark-styles";
+
+  // dark mode tables
+  .table.b-table > thead > tr {
+    // light-colored sort icons
+    > [aria-sort="none"] {
+      background-image: escape-svg($b-table-sort-icon-bg-dark-not-sorted);
+    }
+    > [aria-sort="ascending"] {
+      background-image: escape-svg($b-table-sort-icon-bg-dark-ascending);
+    }
+    > [aria-sort="descending"] {
+      background-image: escape-svg($b-table-sort-icon-bg-dark-not-descending);
+    }
+
+    // color sticky headers properly
+    th.table-b-table-default {
+      color: inherit !important;
+      background-color: $card-bg !important;
+    }
+  }
+
+  // fix timepicker sizing
+  b-form-spinbutton.flex-column {
+    height: auto;
+    width: auto;
+  }
+
+  // fix calendar coloring
+  .b-calendar-grid-body {
+    .text-muted {
+      color: $dark !important;
+    }
+
+    .text-dark {
+      color: $light !important;
+    }
+  }
 
   // Create utility classes for $colors
   $colors: map-merge(
