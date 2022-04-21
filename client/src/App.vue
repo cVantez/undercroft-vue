@@ -40,7 +40,7 @@ nav {
 }
 
 .skiplink {
-  left: 47%;
+  left: 46%;
   position: absolute;
   transform: translateY(-100%);
   transition: transform 0.3s;

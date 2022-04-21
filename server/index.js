@@ -3,6 +3,7 @@ const path = require('path');
 const helmet = require('helmet');
 const cors = require('cors');
 const log4js = require('log4js');
+const favicon = require('serve-favicon');
 
 const env = process.env.NODE_ENV;
 const app = express();
@@ -20,6 +21,10 @@ app.use(helmet());
 app.use(cors());
 app.use(log4js.connectLogger(log4js.getLogger('http'), logOpts));
 app.use(express.json());
+
+// load generated website files
+app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
+app.use(express.static(path.resolve(__dirname, 'public')));
 
 const port = process.env.PORT || 3000;
 
