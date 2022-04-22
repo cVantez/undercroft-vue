@@ -4,7 +4,7 @@
       <span class="text-orange font-weight-bold">Skip to content</span>
     </a>
     <app-nav />
-    <div id="main-content">
+    <div id="main-content" class="mt-4">
       <router-view />
     </div>
   </div>

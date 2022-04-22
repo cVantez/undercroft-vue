@@ -1,27 +1,17 @@
 <template>
-  <b-navbar type="dark" variant="dark" class="d-flex">
-    <b-navbar-brand to="/">
+  <b-navbar class="d-flex py-0">
+    <b-navbar-brand to="/" class="ml-5">
       UNDER<span class="font-weight-bold">CROFT</span>
     </b-navbar-brand>
     <b-navbar-nav class="ml-auto">
-      <b-nav-item
-        to="/"
-        exact
-        class="px-2"
-        link-classes="px-0 pb-0"
-      >
+      <b-nav-item to="/" exact link-classes="py-3">
         Home
       </b-nav-item>
-      <b-nav-item
-        to="/about"
-        exact
-        class="px-2"
-        link-class="px-0 pb-0"
-      >
+      <b-nav-item to="/about" exact link-classes="py-3">
         About
       </b-nav-item>
     </b-navbar-nav>
-    <dark-mode-toggle />
+    <dark-mode-toggle class="mr-5" />
   </b-navbar>
 </template>
 
@@ -47,13 +37,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-li.nav-item {
-  a.nav-link {
-    &.router-link-exact-active,
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+nav.navbar {
+  background: gray("900");
+  color: $white;
+
+  a.navbar-brand {
+    color: $white;
+
     &:hover,
     &:focus {
-      border-bottom: 2px solid;
+      color: $white;
+      border-bottom: 2px solid $white;
+    }
+  }
+
+  li.nav-item {
+    a.nav-link {
+      color: $white;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background: $white;
+        color: gray("900");
+      }
     }
   }
 }
+
 </style>
