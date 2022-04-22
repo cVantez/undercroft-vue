@@ -1,25 +1,31 @@
 <template>
-  <b-navbar class="d-flex py-0">
+  <b-navbar type="dark" toggleable="md" class="py-0">
     <b-navbar-brand to="/" class="ml-5">
       UNDER<span class="font-weight-bold">CROFT</span>
     </b-navbar-brand>
-    <b-navbar-nav class="ml-auto">
-      <b-nav-item to="/" exact link-classes="py-3">
-        Home
-      </b-nav-item>
-      <b-nav-item to="/about" exact link-classes="py-3">
-        About
-      </b-nav-item>
-    </b-navbar-nav>
-    <dark-mode-toggle class="mr-5" />
+
+    <b-navbar-toggle target="nav-collapse" class="border-0 my-2 ml-auto mr-4" />
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav class="text-right ml-auto">
+        <b-nav-item to="/" exact link-classes="py-3 pr-5 pr-md-2">
+          Home
+        </b-nav-item>
+        <b-nav-item to="/about" exact link-classes="py-3 pr-5 pr-md-2">
+          About
+        </b-nav-item>
+      </b-navbar-nav>
+      <dark-mode-toggle class="text-right mr-5 my-3 my-md-0" />
+    </b-collapse>
   </b-navbar>
 </template>
 
 <script>
 import {
+  BCollapse,
   BNavbar,
   BNavbarBrand,
   BNavbarNav,
+  BNavbarToggle,
   BNavItem
 } from 'bootstrap-vue';
 import DarkModeToggle from '@/components/DarkModeToggle.vue';
@@ -27,9 +33,11 @@ import DarkModeToggle from '@/components/DarkModeToggle.vue';
 export default {
   name: 'AppNav',
   components: {
+    BCollapse,
     BNavbar,
     BNavbarBrand,
     BNavbarNav,
+    BNavbarToggle,
     BNavItem,
     DarkModeToggle
   }
