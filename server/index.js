@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const log4js = require('log4js');
 const favicon = require('serve-favicon');
+const history = require('connect-history-api-fallback');
 
 const app = express();
 const env = process.env.NODE_ENV;
@@ -14,6 +15,7 @@ const logOpts = {};
 if (env === 'development') {
   logOpts.format = ':method :url :status :content-length - :response-time ms';
 }
+const log = log4js.getLogger('express');
 
 // security middleware
 app.use(helmet());
@@ -25,14 +27,23 @@ app.use(log4js.connectLogger(log4js.getLogger('http'), logOpts));
 // handle requests with JSON body
 app.use(express.json());
 
-// load generated website files
-app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
-app.use(express.static(path.resolve(__dirname, 'public')));
+// browser history
+app.use(history({
+  index: '/index.html'
+}));
 
-const port = process.env.PORT || 3000;
-const log = log4js.getLogger('express');
+// load generated website files
+app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
+
+// error handling
+app.use((err, req, res, next) => {
+  log.error(err);
+  res.status(500).send(err.message);
+});
 
 // starts server
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running at ${port}`);
   log.info(`Server started on port ${port}`);

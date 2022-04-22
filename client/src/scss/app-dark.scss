@@ -96,6 +96,11 @@ body.bootstrap-dark {
     }
   }
 
+  // fix tooltip for dark mode
+  .tooltip.b-tooltip {
+    opacity: 1;
+  }
+
   // fix timepicker sizing
   b-form-spinbutton.flex-column {
     height: auto;

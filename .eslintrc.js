@@ -58,7 +58,7 @@ module.exports = {
         max: 3
       }
     }],
-    'vue/multiword-component-names': 'off',
+    'vue/multi-word-component-names': 'off',
     'vue/no-deprecated-v-bind-sync': 'off',
     // this rule cannot recognize dynamically-bound `:for` syntax
     'vuejs-accessibility/label-has-for': 'off',
