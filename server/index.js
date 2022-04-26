@@ -34,7 +34,7 @@ app.use(history({
 
 // load generated website files
 app.use(express.static(path.resolve(__dirname, 'public')));
-app.use(favicon(path.resolve(__dirname, 'public/favicon.ico')));
+app.use(favicon(path.resolve(__dirname, 'public/images/tide.png')));
 
 // error handling
 app.use((err, req, res, next) => {
