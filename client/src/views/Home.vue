@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="row">
+      <div class="runner col-lg-8 col-10 mx-auto">
+        <info-box title="Mission Statement">
+          The Undercroft is a community arts center focused on providing a safe,
+          accessible, all-ages space for artists, Remington residents & working families.
+        </info-box>
+        <info-box title="Location">
+          <!-- TODO: -->
+          Google Maps integration
+        </info-box>
+        <info-box title="Events">
+          <!-- TODO: -->
+          FB integration
+        </info-box>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import InfoBox from '@/components/InfoBox.vue';
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld,
-  },
+  components: { InfoBox }
 };
 </script>
+
+<style lang="scss" scoped>
+</style>

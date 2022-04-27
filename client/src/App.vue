@@ -4,7 +4,7 @@
       <span class="text-orange font-weight-bold">Skip to content</span>
     </a>
     <app-nav />
-    <div id="main-content" class="mt-4">
+    <div id="main-content" class="container-fluid px-0 py-4">
       <router-view />
     </div>
   </div>
@@ -20,12 +20,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import "~@/scss/mixins/bg-size-cover";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: gray("900");
 }
 
 .skiplink {
@@ -38,6 +42,22 @@ export default {
   &:focus {
     transform: translateY(0%);
     z-index: 1100;
+  }
+}
+
+#main-content {
+  // TODO: parallax the bg?
+  background-image: url("~@/assets/flower_bg.jpg");
+  @include bg-size-cover;
+
+  > div.row {
+    width: 100%;
+  }
+
+  // TODO: dark mode theme
+  div.runner {
+    background-color: #f5f5dc;
+    padding: 2rem 0;
   }
 }
 </style>
