@@ -1,0 +1,12 @@
+$font-family-sans-serif: Lato, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Liberation Sans",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$uc-pale-yellow: #f5f5dc;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "uc-pale-yellow": $uc-pale-yellow,
+  ),
+  $colors
+);
