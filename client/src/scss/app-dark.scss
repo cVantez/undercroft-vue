@@ -1,6 +1,7 @@
 // TODO: submit as PR to @forevolve/bootstrap-dark
 // Mostly copied from @forevolve/bootstrap-dark/scss/toggle-bootstrap-dark.scss
 // but fixed so the dark-variables $colors actually take precedence over the bootstrap ones
+@import "./variables";
 @import "./dark-variables";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";

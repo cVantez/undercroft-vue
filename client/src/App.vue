@@ -7,16 +7,17 @@
     <div id="main-content" class="container-fluid px-0 py-4">
       <router-view />
     </div>
-    <!-- TODO: footer -->
+    <app-footer />
   </div>
 </template>
 
 <script>
+import AppFooter from '@/components/AppFooter.vue';
 import AppNav from '@/components/AppNav.vue';
 
 export default {
   name: 'UndercroftApp',
-  components: { AppNav }
+  components: { AppNav, AppFooter }
 };
 </script>
 
@@ -26,7 +27,6 @@ export default {
 @import "~bootstrap/scss/variables";
 @import "~@/scss/mixins/bg-size-cover";
 
-// TODO: $font-size-base = 1.5rem?
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
