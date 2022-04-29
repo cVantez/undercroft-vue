@@ -5,8 +5,11 @@ const cors = require('cors');
 const log4js = require('log4js');
 const favicon = require('serve-favicon');
 const history = require('connect-history-api-fallback');
+// const fs = require('fs');
+// const https = require('https');
 
 const metaRouter = require('#routes/api/meta');
+// const { ca, pfx, passphrase } = require('./config/sslConfig');
 
 const app = express();
 const env = process.env.NODE_ENV;
@@ -22,6 +25,7 @@ const log = log4js.getLogger('express');
 // security middleware
 app.use(helmet());
 app.use(cors());
+// app.use(cors({ credentials: true }));
 
 // server logs
 app.use(log4js.connectLogger(log4js.getLogger('http'), logOpts));
@@ -53,3 +57,19 @@ app.listen(port, () => {
   console.log(`Server is running at ${port}`);
   log.info(`Server started on port ${port}`);
 });
+
+// const options = {
+//   minVersion: 'TLSv1.2',
+//   requestCert: true,
+//   ca: fs.readFileSync(ca),
+//   pfx: fs.readFileSync(pfx),
+//   passphrase
+// };
+
+// // start https server
+// const server = https.createServer(options, app);
+// server.listen(port);
+// server.on('listening', () => {
+//   console.log(`Server is running at ${port}`);
+//   log.info(`Server started on port ${port}`);
+// });
