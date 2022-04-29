@@ -12,12 +12,19 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import AppFooter from '@/components/AppFooter.vue';
 import AppNav from '@/components/AppNav.vue';
 
 export default {
   name: 'UndercroftApp',
-  components: { AppNav, AppFooter }
+  components: { AppNav, AppFooter },
+  async created() {
+    await this.loadMeta();
+  },
+  methods: {
+    ...mapActions('meta', { loadMeta: 'load' })
+  }
 };
 </script>
 

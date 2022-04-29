@@ -11,7 +11,8 @@
     "lint": "eslint --ext .js --ignore-pattern server/public --fix server"
   },
   "imports": {
-    "#config/*": "./server/config/*.js"
+    "#config/*": "./server/config/*.js",
+    "#routes/*": "./server/routes/*.js"
   },
   "dependencies": {
     "axios": "^0.26.1",

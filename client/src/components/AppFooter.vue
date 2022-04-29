@@ -3,7 +3,7 @@
     <div class="row py-3 px-1">
       <div class="col-md-4 col-12 text-left">
         <a
-          href="https://www.instagram.com/undercroftmd"
+          :href="links.insta"
           target="_blank"
           class="text-white"
         >
@@ -13,7 +13,7 @@
         </a>
         <br>
         <a
-          href="https://www.facebook.com/undercroftmd"
+          :href="links.fb"
           target="_blank"
           class="text-white"
         >
@@ -27,12 +27,16 @@
       >
         2629 Huntingdon Ave, Baltimore, MD 21211
       </div>
-      <div class="col-md-4 col-12" />
+      <div class="col-md-4 col-12">
+        v{{ buildVersion }}<br>
+        Built on: {{ buildDate }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import {
   BIconFacebook,
   BIconInstagram
@@ -44,6 +48,16 @@ export default {
   components: {
     BIconFacebook,
     BIconInstagram
+  },
+  computed: {
+    ...mapState('meta', ['links']),
+    buildDate() {
+      return new Date(process.env.VUE_APP_BUILD_DATE)
+        .toLocaleString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    },
+    buildVersion() {
+      return process.env.VUE_APP_VERSION;
+    }
   }
 };
 </script>

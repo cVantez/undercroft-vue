@@ -2,6 +2,7 @@
   <div class="home">
     <div class="row w-100">
       <div class="runner col-lg-8 col-10 mx-auto">
+        <!-- TODO: hoper carousel: https://baianat.github.io/hooper/ -->
         <info-box title="Mission Statement">
           The Undercroft is a community arts center focused on providing a safe,
           accessible, all-ages space for artists, Remington residents & working families.

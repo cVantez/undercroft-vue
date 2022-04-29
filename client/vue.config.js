@@ -17,6 +17,14 @@ module.exports = defineConfig({
       }
     }
   },
+  pages: {
+    home: {
+      entry: 'src/main.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+      title: 'Undercroft'
+    }
+  },
   chainWebpack: (config) => {
     config.resolve.alias.set('#router', path.resolve(__dirname, 'src/router'));
     config.resolve.alias.set('#scss', path.resolve(__dirname, 'src/scss'));

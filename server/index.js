@@ -6,6 +6,8 @@ const log4js = require('log4js');
 const favicon = require('serve-favicon');
 const history = require('connect-history-api-fallback');
 
+const metaRouter = require('#routes/api/meta');
+
 const app = express();
 const env = process.env.NODE_ENV;
 
@@ -26,6 +28,9 @@ app.use(log4js.connectLogger(log4js.getLogger('http'), logOpts));
 
 // handle requests with JSON body
 app.use(express.json());
+
+// back end routing
+app.use('/api/meta', metaRouter);
 
 // browser history
 app.use(history({

@@ -13,7 +13,8 @@ module.exports = {
         map: [
           ['@', './client/src'],
           ['#scss', './client/src/scss'],
-          ['#config', './server/config']
+          ['#config', './server/config'],
+          ['#routes', './server/routes']
         ]
       }
     }
