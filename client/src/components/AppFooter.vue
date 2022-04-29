@@ -28,8 +28,10 @@
         2629 Huntingdon Ave, Baltimore, MD 21211
       </div>
       <div class="col-md-4 col-12">
-        v{{ buildVersion }}<br>
-        Built on: {{ buildDate }}
+        <div class="float-md-right text-left">
+          v{{ buildVersion }}<br>
+          Built on: {{ buildDate }}
+        </div>
       </div>
     </div>
   </div>
