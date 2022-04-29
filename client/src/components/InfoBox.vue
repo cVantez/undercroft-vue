@@ -1,8 +1,8 @@
 <template>
   <div class="row info-row">
-    <div class="info-box col-10 px-2 py-4 mx-auto my-3">
+    <div class="info-box col-10 px-3 py-4 mx-auto my-3">
       <h2>{{ title }}</h2>
-      <p>
+      <p class="text-left">
         <slot />
       </p>
     </div>
