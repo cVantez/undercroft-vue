@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="row w-100">
+    <div class="row w-100 ml-0">
       <div class="runner col-lg-8 col-10 mx-auto">
         <carousel class="carousel mb-3" />
         <info-box title="Mission Statement">

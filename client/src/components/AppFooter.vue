@@ -23,12 +23,13 @@
         </a>
       </div>
       <div
-        class="col-md-4 col-12 my-md-0 my-3 d-flex align-items-center justify-content-md-center justify-content-left"
+        class="col-md-4 col-12 my-md-0 my-3 text-left text-md-center
+          d-flex align-items-center justify-content-md-center justify-content-left"
       >
         2629 Huntingdon Ave, Baltimore, MD 21211
       </div>
-      <div class="col-md-4 col-12">
-        <div class="float-md-right text-left">
+      <div class="col-md-4 col-12 d-flex align-items-end justify-content-md-end">
+        <div class="text-left text-small">
           v{{ buildVersion }}<br>
           Built on: {{ buildDate }}
         </div>

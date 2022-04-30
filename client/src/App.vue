@@ -68,7 +68,7 @@ export default {
 
   // TODO: dark mode theme
   div.runner {
-    background-color: $uc-pale-yellow;
+    background-color: $uc-runner-bg;
     padding: 2rem 0;
   }
 }
