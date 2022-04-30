@@ -2,7 +2,7 @@
   <div class="home">
     <div class="row w-100">
       <div class="runner col-lg-8 col-10 mx-auto">
-        <!-- TODO: hoper carousel: https://baianat.github.io/hooper/ -->
+        <carousel class="carousel mb-3" />
         <info-box title="Mission Statement">
           The Undercroft is a community arts center focused on providing a safe,
           accessible, all-ages space for artists, Remington residents & working families.
@@ -21,13 +21,17 @@
 </template>
 
 <script>
+import Carousel from '@/components/Carousel.vue';
 import InfoBox from '@/components/InfoBox.vue';
 
 export default {
   name: 'Home',
-  components: { InfoBox }
+  components: { InfoBox, Carousel }
 };
 </script>
 
 <style lang="scss" scoped>
+.carousel {
+  height: 350px;
+}
 </style>
