@@ -81,14 +81,12 @@ export default {
 @import '~hooper/dist/hooper.css';
 
 img {
-  max-width: 100%;
+  max-width: 80%;
   max-height: 100%;
   object-fit: contain;
 }
 
 ::v-deep .hooper-pagination {
-  bottom: -1rem;
-
   li {
     padding: 0 0.5rem;
 

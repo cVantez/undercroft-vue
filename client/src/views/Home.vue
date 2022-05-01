@@ -32,6 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .carousel {
-  height: 350px;
+  max-height: 350px;
 }
 </style>
