@@ -2,9 +2,7 @@
   <div class="row info-row">
     <div class="info-box col-10 px-3 py-4 mx-auto my-3">
       <h2>{{ title }}</h2>
-      <p class="text-left">
-        <slot />
-      </p>
+      <slot />
     </div>
   </div>
 </template>

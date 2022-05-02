@@ -1,5 +1,6 @@
 <template>
   <div class="row">
+    <!-- TODO: make arrows a little bigger? -->
     <div class="col-10 mx-auto h-100">
       <hooper
         :infinite-scroll="true"

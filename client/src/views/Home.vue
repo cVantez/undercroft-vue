@@ -4,12 +4,13 @@
       <div class="runner col-lg-8 col-10 mx-auto">
         <carousel class="carousel mb-3" />
         <info-box title="Mission Statement">
-          The Undercroft is a community arts center focused on providing a safe,
-          accessible, all-ages space for artists, Remington residents & working families.
+          <p class="text-left">
+            The Undercroft is a community arts center focused on providing a safe,
+            accessible, all-ages space for artists, Remington residents & working families.
+          </p>
         </info-box>
         <info-box title="Location">
-          <!-- TODO: -->
-          Google Maps integration
+          <google-map class="mt-4" />
         </info-box>
         <info-box title="Events">
           <!-- TODO: -->
@@ -22,11 +23,12 @@
 
 <script>
 import Carousel from '@/components/Carousel.vue';
+import GoogleMap from '@/components/GoogleMap.vue';
 import InfoBox from '@/components/InfoBox.vue';
 
 export default {
   name: 'Home',
-  components: { InfoBox, Carousel }
+  components: { Carousel, GoogleMap, InfoBox }
 };
 </script>
 

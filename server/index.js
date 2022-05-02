@@ -23,7 +23,19 @@ if (env === 'development') {
 const log = log4js.getLogger('express');
 
 // security middleware
-app.use(helmet());
+app.use(helmet(
+  {
+    contentSecurityPolicy: {
+      directives: {
+        'default-src': ["'self'", 'maps.googleapis.com'],
+        'script-src': ["'self'", 'maps.googleapis.com'],
+        'img-src': ["'self'", 'data:', 'maps.googleapis.com', 'maps.gstatic.com'],
+      }
+    },
+    // TODO: seem to need this for google maps. is this safe?
+    crossOriginEmbedderPolicy: false
+  }
+));
 app.use(cors());
 // app.use(cors({ credentials: true }));
 
