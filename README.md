@@ -11,6 +11,38 @@ description here
 
 See output of the init script for tips on runing builds.
 
+### Google Maps Integration
+
+To set up Google Maps integration:
+
+1. Set up a [Google Cloud project](https://console.cloud.google.com/home/).
+1. Under APIs & Services > Enabled APIs & Services, make sure "Maps JavaScript API" and "Places API"
+   are enabled. These services cost a total of $24 per 1000 page loads ($7 maps + $17 places).
+   You start with $300 credit for your free trial, and then get $200 montly credit after that.
+1. Under Credentials > Create Credentials click "API key".
+1. Create a file called `server/config/googleConfig.local.js`:
+   ```js
+   module.exports = {
+     apiKey: 'your-google-api-key'
+   };
+   ```
+
+### SSL Integration
+
+If you want to enable SSL connection:
+
+1. Have a [CA Bundle](https://curl.se/docs/caextract.html) on your server in `.crt` format.
+1. [Create a server certificate](https://linuxize.com/post/creating-a-self-signed-ssl-certificate/).
+   Make sure the name on the certificate and the name of the file itself match the FQDN of your server.
+1. Update the fields in `server/config/sslConfig.js`.
+1. Create a file called  `server/config/sslConfig.local.js`:
+   ```js
+   module.exports = {
+     passphrase: 'base-64-encoded-passphrase-for-hostename.p12'
+     };
+   ```
+1. Uncomment the appropriate lines in `server/index.js`.
+
 ## Linting
 
 Both root and client have lint scripts
