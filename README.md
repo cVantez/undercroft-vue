@@ -21,11 +21,26 @@ To set up Google Maps integration:
    You start with $300 credit for your free trial, and then get $200 montly credit after that.
 1. Under Credentials > Create Credentials click "API key".
 1. Create a file called `server/config/googleConfig.local.js`:
-   ```js
-   module.exports = {
-     apiKey: 'your-google-api-key'
-   };
-   ```
+    ```js
+    module.exports = {
+      apiKey: 'your-google-api-key'
+    };
+    ```
+
+### Facebook Integration
+
+To set up Facebook integration:
+
+1. Set up a [Facebook developer account](https://developers.facebook.com/).
+1. Click "Get Started" and follow the instructions (choose "Developer" at the end).
+1. Click "Create App" and follow the instructions.
+1. Copy the App ID near the top left corner of the dashboard.
+1. Create a file called `server/config/fbConfig.local.js`:
+    ```js
+    module.exports = {
+      appId: 'your-fb-app-id'
+    };
+    ```
 
 ### SSL Integration
 
@@ -36,11 +51,11 @@ If you want to enable SSL connection:
    Make sure the name on the certificate and the name of the file itself match the FQDN of your server.
 1. Update the fields in `server/config/sslConfig.js`.
 1. Create a file called  `server/config/sslConfig.local.js`:
-   ```js
-   module.exports = {
-     passphrase: 'base-64-encoded-passphrase-for-hostename.p12'
-     };
-   ```
+    ```js
+    module.exports = {
+      passphrase: 'base-64-encoded-passphrase-for-hostename.p12'
+    };
+    ```
 1. Uncomment the appropriate lines in `server/index.js`.
 
 ## Linting

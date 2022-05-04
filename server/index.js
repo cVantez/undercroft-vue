@@ -26,10 +26,24 @@ const log = log4js.getLogger('express');
 app.use(helmet(
   {
     contentSecurityPolicy: {
+      useDefaults: true,
       directives: {
-        'default-src': ["'self'", 'maps.googleapis.com'],
-        'script-src': ["'self'", 'maps.googleapis.com'],
-        'img-src': ["'self'", 'data:', 'maps.googleapis.com', 'maps.gstatic.com'],
+        'connect-src': ["'self'", 'maps.googleapis.com'],
+        'frame-src': ["'self'", 'www.facebook.com'],
+        'img-src': [
+          "'self'",
+          'data:',
+          'www.facebook.com',
+          'maps.googleapis.com',
+          'maps.gstatic.com'
+        ],
+        'script-src': [
+          "'self'",
+          'connect.facebook.net',
+          'maps.googleapis.com',
+          // Vue Devtools
+          "'sha256-rwMOiOeVICH7/Cjy5SkreID3OOi5HTrit357k22hUDQ='"
+        ],
       }
     },
     // TODO: seem to need this for google maps. is this safe?

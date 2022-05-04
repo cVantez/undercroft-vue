@@ -13,8 +13,7 @@
           <google-map class="mt-4" />
         </info-box>
         <info-box title="Events">
-          <!-- TODO: -->
-          FB integration
+          <fb-events />
         </info-box>
       </div>
     </div>
@@ -23,12 +22,18 @@
 
 <script>
 import Carousel from '@/components/Carousel.vue';
+import FbEvents from '@/components/FbEvents.vue';
 import GoogleMap from '@/components/GoogleMap.vue';
 import InfoBox from '@/components/InfoBox.vue';
 
 export default {
   name: 'Home',
-  components: { Carousel, GoogleMap, InfoBox }
+  components: {
+    Carousel,
+    FbEvents,
+    GoogleMap,
+    InfoBox
+  }
 };
 </script>
 
