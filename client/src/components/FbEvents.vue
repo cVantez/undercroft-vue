@@ -1,5 +1,6 @@
 <template>
-  <!-- TODO: events display doesn't work -->
+  <!-- events display is broken on FB's end, see: -->
+  <!--  https://developers.facebook.com/support/bugs/314594194066745/ -->
   <div
     class="fb-page"
     data-href="https://www.facebook.com/undercroftmd"
