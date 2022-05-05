@@ -42,7 +42,6 @@ export default {
   },
   mounted() {
     // will run if this is not the first page loaded
-    // i.e. appId()
     if (this.appId && this.appId !== '') {
       this.addFbAsyncInit(this.appId);
       this.loadFbSdk();

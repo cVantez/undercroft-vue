@@ -24,9 +24,19 @@ export default {
     // this is in a watch expression because the API key won't be loaded
     // from the back end yet during mounted()
     apiKey(newVal) {
+      this.googleMapInit(newVal);
+    }
+  },
+  mounted() {
+    if (this.apiKey && this.apiKey !== '') {
+      this.googleMapInit(this.apiKey);
+    }
+  },
+  methods: {
+    googleMapInit(key) {
       this.$nextTick(async () => {
         const loader = new Loader({
-          apiKey: newVal,
+          apiKey: key,
           version: 'weekly',
           libraries: ['places']
         });
@@ -66,9 +76,7 @@ export default {
           }
         });
       });
-    }
-  },
-  methods: {
+    },
     showPlaceInfo(map, place, marker, infoWindow) {
       const content = document.createElement('div');
       content.className = 'p-1 text-left';
