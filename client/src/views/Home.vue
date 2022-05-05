@@ -1,22 +1,18 @@
 <template>
   <div class="home">
-    <div class="row w-100 ml-0">
-      <div class="runner col-lg-8 col-10 mx-auto">
-        <carousel class="carousel mb-3" />
-        <info-box title="Mission Statement">
-          <p class="text-left">
-            The Undercroft is a community arts center focused on providing a safe,
-            accessible, all-ages space for artists, Remington residents & working families.
-          </p>
-        </info-box>
-        <info-box title="Location">
-          <google-map class="mt-4" />
-        </info-box>
-        <info-box title="Events">
-          <fb-events />
-        </info-box>
-      </div>
-    </div>
+    <carousel class="carousel mb-3" />
+    <info-box title="Mission Statement">
+      <p class="text-left">
+        The Undercroft is a community arts center focused on providing a safe,
+        accessible, all-ages space for artists, Remington residents & working families.
+      </p>
+    </info-box>
+    <info-box title="Location">
+      <google-map class="mt-4" />
+    </info-box>
+    <info-box title="Events">
+      <fb-events />
+    </info-box>
   </div>
 </template>
 

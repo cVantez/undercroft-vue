@@ -5,7 +5,11 @@
     </a>
     <app-nav />
     <div id="main-content" class="container-fluid px-0 py-4">
-      <router-view />
+      <div class="row w-100 ml-0">
+        <div class="runner col-lg-8 col-10 mx-auto">
+          <router-view />
+        </div>
+      </div>
     </div>
     <app-footer />
   </div>
