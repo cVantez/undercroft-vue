@@ -8,38 +8,10 @@
         :play-speed="5000"
         class="h-100"
       >
-        <slide>
+        <slide v-for="el, idx in images" :key="idx">
           <img
-            src="@/assets/Undercroft000.jpg"
-            alt="A local band performs at the undercroft.
-              The vocalist invites you in as the other musicians perform stoically."
-          >
-        </slide>
-        <slide>
-          <img
-            src="@/assets/Undercroft001.jpg"
-            alt="The undercroft stage, empty.
-              On the wall, bright flowers bloom through lush foliage in stark contrast to the black background."
-          >
-        </slide>
-        <slide>
-          <img
-            src="@/assets/Undercroft002.jpg"
-            alt="The undercroft's outdoor space. A quiet paved area shaded by trees."
-          >
-        </slide>
-        <slide>
-          <img
-            src="@/assets/Undercroft003.jpg"
-            alt="Another local band performs.
-              The guitarist and bassist rock out with their backs turned in dramatic lighting."
-          >
-        </slide>
-        <slide>
-          <img
-            src="@/assets/Undercroft004.jpg"
-            alt="Shadow puppets projected on a large screen.
-              Hands mimic the heads of an ostrich and a dog talking to each other."
+            :src="require(`@/assets/${el.src}`)"
+            :alt="el.alt"
           >
         </slide>
         <template #hooper-addons>
@@ -66,6 +38,12 @@ export default {
     HooperNavigation,
     HooperPagination,
     Slide
+  },
+  props: {
+    images: {
+      type: Array,
+      default: () => []
+    }
   },
   mounted() {
     // Remove indicator buttons from tabindex
