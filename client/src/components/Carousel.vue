@@ -1,11 +1,8 @@
 <template>
   <div class="row">
-    <!-- TODO: make arrows a little bigger? -->
     <div class="col-10 mx-auto h-100">
       <hooper
-        :infinite-scroll="true"
-        :auto-play="true"
-        :play-speed="5000"
+        :settings="hooperSettings"
         class="h-100"
       >
         <slide v-for="el, idx in images" :key="idx">
@@ -16,7 +13,7 @@
         </slide>
         <template #hooper-addons>
           <hooper-navigation />
-          <hooper-pagination />
+          <hooper-pagination mode="fraction" />
         </template>
       </hooper>
     </div>
@@ -29,7 +26,7 @@ import {
   Navigation as HooperNavigation,
   Pagination as HooperPagination,
   Slide
-} from 'hooper';
+} from '@/vendor/hooper';
 
 export default {
   name: 'Carousel',
@@ -45,14 +42,22 @@ export default {
       default: () => []
     }
   },
-  mounted() {
-    // Remove indicator buttons from tabindex
-    // They are annoying to scroll through, and the carousel is navigable through other means
-    this.$nextTick(() => {
-      Array.from(document.getElementsByClassName('hooper-indicator'))
-        .forEach((el) => { el.setAttribute('tabindex', -1); });
-    });
-  }
+  data() {
+    return {
+      hooperSettings: {
+        infiniteScroll: true,
+        autoPlay: true,
+        playSpeed: 5000,
+        pagination: 'fraction',
+        breakpoints: {
+          // 1px above bootstrap md breakpoint
+          769: {
+            pagination: 'indicator'
+          }
+        }
+      }
+    };
+  },
 };
 </script>
 
@@ -66,12 +71,20 @@ img {
 }
 
 ::v-deep .hooper-pagination {
+  // for the indicator buttons
   li {
     padding: 0 0.5rem;
 
     button {
       padding: 0.25rem;
     }
+  }
+
+  // for the fraction paging on mobile
+  > span {
+    color: white;
+    font-weight: bold;
+    padding-bottom: 1rem;
   }
 }
 </style>
