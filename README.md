@@ -20,6 +20,8 @@ To set up Google Maps integration:
    are enabled. These services cost a total of $24 per 1000 page loads ($7 maps + $17 places).
    You start with $300 credit for your free trial, and then get $200 montly credit after that.
 1. Under Credentials > Create Credentials click "API key".
+1. Follow the [steps to restrict your API key](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key)
+   so that it can only be used to acccess the Maps API, and only requests from your domain name will work.
 1. Create a file called `server/config/googleConfig.local.js`:
     ```js
     module.exports = {

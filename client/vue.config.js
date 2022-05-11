@@ -5,7 +5,6 @@ const path = require('path');
 process.env.VUE_APP_VERSION = process.env.npm_package_version;
 process.env.VUE_APP_BUILD_DATE = new Date().toISOString();
 
-// TODO: how to change title
 module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: path.resolve(__dirname, '../server/public'),
