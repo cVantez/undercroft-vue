@@ -11,6 +11,7 @@
             :alt="el.alt"
           >
         </slide>
+        <!-- TODO: add toggle to stop autoplay -->
         <template #hooper-addons>
           <hooper-navigation />
           <hooper-pagination mode="fraction" />

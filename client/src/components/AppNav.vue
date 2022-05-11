@@ -10,8 +10,8 @@
         <b-nav-item to="/" exact link-classes="py-3 pr-5 pr-md-2">
           Home
         </b-nav-item>
-        <b-nav-item to="/about" exact link-classes="py-3 pr-5 pr-md-2">
-          About
+        <b-nav-item to="/redWagon" exact link-classes="py-3 pr-5 pr-md-2">
+          Red Wagon
         </b-nav-item>
       </b-navbar-nav>
       <dark-mode-toggle class="text-right mr-5 my-3 my-md-0" />

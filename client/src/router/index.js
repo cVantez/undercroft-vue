@@ -1,6 +1,6 @@
+import Home from '@/views/Home.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 
 const routes = [
   {
@@ -9,18 +9,18 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/redWagon',
+    name: 'redWagon',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '@/views/RedWagon.vue'),
   },
   // fallthrough route for custom 404 page
   {
     path: '/:missingUrl(.*)',
     name: 'NotFound',
-    component: () => import(/* webpackChunkName: "missing" */ '../views/Missing.vue')
+    component: () => import(/* webpackChunkName: "missing" */ '@/views/Missing.vue')
   }
 ];
 

@@ -62,7 +62,6 @@ export default {
 #main-content {
   flex: 1;
 
-  // TODO: parallax the bg?
   background-image: url("~@/assets/flower_bg.jpg");
   @include bg-size-cover;
 

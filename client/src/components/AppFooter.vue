@@ -44,7 +44,6 @@ import {
   BIconFacebook,
   BIconInstagram
 } from 'bootstrap-vue';
-// TODO: map meta state for links
 
 export default {
   name: 'AppFooter',

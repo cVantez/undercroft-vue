@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
+  <div id="home">
     <carousel
       class="carousel mb-3"
       :images="[{
         src: 'Undercroft0.jpg',
         alt: 'A local band performs at the undercroft.'
           + ' The vocalist invites you in as the other musicians perform stoically.'
-      },{
+      }, {
         src: 'Undercroft1.jpg',
         alt: 'The undercroft stage, empty. On the wall, bright flowers bloom'
           + ' through lush foliage in stark contrast to the black background.'
