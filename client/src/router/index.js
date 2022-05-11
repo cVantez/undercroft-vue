@@ -9,12 +9,17 @@ const routes = [
     component: Home,
   },
   {
-    path: '/redWagon',
+    path: '/redwagon',
     name: 'redWagon',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/RedWagon.vue'),
+    component: () => import(/* webpackChunkName: "redWagon" */ '@/views/RedWagon.vue'),
+  },
+  {
+    path: '/getinvolved',
+    name: 'getInvolved',
+    component: () => import(/* webpackChunkName: "getInvolved" */ '@/views/GetInvolved.vue'),
   },
   // fallthrough route for custom 404 page
   {

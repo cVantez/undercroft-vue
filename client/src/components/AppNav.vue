@@ -10,8 +10,11 @@
         <b-nav-item to="/" exact link-classes="py-3 pr-5 pr-md-2">
           Home
         </b-nav-item>
-        <b-nav-item to="/redWagon" exact link-classes="py-3 pr-5 pr-md-2">
+        <b-nav-item to="/redwagon" exact link-classes="py-3 pr-5 pr-md-2">
           Red Wagon
+        </b-nav-item>
+        <b-nav-item to="/getinvolved" exact link-classes="py-3 pr-5 pr-md-2">
+          Get Involved
         </b-nav-item>
       </b-navbar-nav>
       <dark-mode-toggle class="text-right mr-5 my-3 my-md-0" />
@@ -65,6 +68,11 @@ nav.navbar {
   li.nav-item {
     a.nav-link {
       color: $white;
+
+      // add styles here to apply to nav item for current page
+      &.router-link-exact-active {
+        color: $cyan;
+      }
 
       &:hover,
       &:focus {
