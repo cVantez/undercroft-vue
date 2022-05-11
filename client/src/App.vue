@@ -65,10 +65,6 @@ export default {
   background-image: url("~@/assets/flower_bg.jpg");
   @include bg-size-cover;
 
-  > div.row {
-    width: 100%;
-  }
-
   // TODO: dark mode theme?
   div.runner {
     background-color: $uc-runner-bg;

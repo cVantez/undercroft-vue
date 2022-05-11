@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <carousel
-      class="carousel mb-3"
+      class="carousel mb-4"
       :images="[{
         src: 'Undercroft0.jpg',
         alt: 'A local band performs at the undercroft.'

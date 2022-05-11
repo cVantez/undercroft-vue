@@ -1,6 +1,6 @@
 <template>
   <div id="getInvolved">
-    <div class="row">
+    <div class="row mb-3">
       <div class="col-10 col-md-8 mx-auto">
         <img
           src="@/assets/window.jpg"

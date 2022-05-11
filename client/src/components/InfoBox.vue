@@ -37,7 +37,7 @@ export default {
   }
 
   .info-box {
-    border: 2px solid gray(900);
+    border: 2px solid gray("900");
   }
 }
 </style>

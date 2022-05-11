@@ -1,7 +1,7 @@
 <template>
   <div id="redWagon">
     <carousel
-      class="carousel mb-3"
+      class="carousel mb-4"
       :images="[{
         src: 'RedWagon0.jpg',
         alt: 'Rainbow-colored chalk spells out red wagon on a sidewalk.'
