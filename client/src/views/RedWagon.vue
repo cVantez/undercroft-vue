@@ -38,7 +38,9 @@
     </info-box>
     <info-box title="Contact">
       <p class="text-left">
-        Feel free to contact Red Wagon and follow our social media for all the latest updates.<br>
+        Feel free to contact Red Wagon and follow our social media for all the latest updates.
+      </p>
+      <p class="text-left">
         <a
           :href="links.rwInsta"
           target="_blank"
