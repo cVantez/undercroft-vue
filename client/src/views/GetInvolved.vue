@@ -9,15 +9,15 @@
       </div>
     </div>
     <info-box title="Donate">
-      <p class="mt-4">
+      <div class="row mt-4">
         <a
           :href="links.donate"
           target="_blank"
-          class="btn btn-outline-gray-dark"
+          class="btn btn-outline-gray-dark col-md-4 col-8 mx-auto"
         >
           Contribute to our GoFundMe
         </a>
-      </p>
+      </div>
     </info-box>
     <info-box title="Join Our Newsletter">
       <b-form class="pt-4" @submit="doPost">
@@ -94,9 +94,11 @@
             </b-form-checkbox>
           </div>
         </b-form-group>
-        <b-button type="submit" class="btn-gray-dark mt-3">
-          Sign Up
-        </b-button>
+        <div class="row mt-3">
+          <b-button type="submit" variant="outline-gray-dark" class="col-md-4 col-8 mx-auto">
+            Subscribe
+          </b-button>
+        </div>
       </b-form>
     </info-box>
   </div>
