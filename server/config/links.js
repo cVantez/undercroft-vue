@@ -10,6 +10,7 @@ module.exports = {
 
   // TODO: replace this with a working link
   donate: 'https://charity.gofundme.com/o/en/campaign/the-undercroft',
+  mailingList: 'https://eepurl.us20.list-manage.com/subscribe/post?u=b620ef5db808d6ddaebcdcac8&id=a18a14e3ce',
 
   googleKey: apiKey,
   fbAppId: appId
